@@ -4,16 +4,14 @@
         this.data = ko.observableArray();
     };
     ImageArchive.bindToUrl = function (imageListUrl) {
+        var self = this;
         $.getJSON(imageListUrl).done(function (data) {
-            bindToImages(data);
+            self.bindToImages(data);
         });
     };
     ImageArchive.bindToImages = function (images) {
         var viewModel = new ImageArchive.viewModel();
         viewModel.data(images);
         ko.applyBindings(viewModel);
-    };
-    ImageArchive.showImage = function (data) {
-        $("#test").text(data.uri);
     };
 })(window.ImageArchive = window.ImageArchive || {});

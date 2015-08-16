@@ -11,16 +11,15 @@
   <body>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-xs-3">
+        <div class="col-xs-2">
           <div class="container-fluid" data-bind="foreach: data">
             <div class="row">
-              <button class="btn btn-default btn-sm btn-block" data-bind="text: url, click: function(data) { $('#test').text(data.url); }" />
+              <button class="btn btn-default btn-sm btn-block" data-bind="text: name, click: function(data) { $('#image').attr('src',data.url); }" />
             </div>
           </div>
         </div>
-        <div class="col-xs-9">
+        <div class="col-xs-10">
           <img id="image" />
-          <div id="test" />
         </div>
       </div>
     </div>
@@ -30,16 +29,7 @@
     <script src="imageArchive.js"></script>
     <script>
         $(function () {
-            //ImageArchive.bindToUrl('imageArchive.php');
-            var images = [
-              {'url': "a"},
-              {'url': "b"},
-              {'url': "c"},
-              {'url': "d"},
-              {'url': "e"},
-              {'url': "f"}
-            ];
-            ImageArchive.bindToImages(images);
+            ImageArchive.bindToUrl('imageArchive.php');
         });
     </script>
   </body>
