@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Math Problems</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-3">
+          <div class="container-fluid" data-bind="foreach: data">
+            <div class="row">
+              <button class="btn btn-default btn-sm btn-block" data-bind="text: url, click: function(data) { $('#test').text(data.url); }" />
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-9">
+          <img id="image" />
+          <div id="test" />
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.3.0.js"></script>
+    <script src="imageArchive.js"></script>
+    <script>
+        $(function () {
+            //ImageArchive.bindToUrl('imageArchive.php');
+            var images = [
+              {'url': "a"},
+              {'url': "b"},
+              {'url': "c"},
+              {'url': "d"},
+              {'url': "e"},
+              {'url': "f"}
+            ];
+            ImageArchive.bindToImages(images);
+        });
+    </script>
+  </body>
+</html>
