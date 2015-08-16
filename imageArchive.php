@@ -1,6 +1,6 @@
 <?php
 $dir = 'imageArchive';
-$images = scandir($dir);
+$images = scandir($dir, 1);
 echo '[';
 $outputed = false;
 foreach ($images as $image)
